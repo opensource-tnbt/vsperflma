@@ -1,0 +1,118 @@
+2020-01-21 03:25:01,481 p=sridhar u=27947 | PLAY [all] *********************************************************************
+2020-01-21 03:25:01,523 p=sridhar u=27947 | TASK [Gathering Facts] *********************************************************
+2020-01-21 03:25:03,466 p=sridhar u=27947 | ok: [127.0.0.1]
+2020-01-21 03:25:03,524 p=sridhar u=27947 | TASK [../roles/fluentd : Copy fluentd yum repo file] ***************************
+2020-01-21 03:25:04,620 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:04,660 p=sridhar u=27947 | TASK [../roles/fluentd : Import fluentd GPG Key] *******************************
+2020-01-21 03:25:05,608 p=sridhar u=27947 | [WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created
+with a mode of 0700, this may cause issues when running as another user. To
+avoid this, create the remote_tmp dir with the correct permissions manually
+
+2020-01-21 03:25:05,608 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:05,659 p=sridhar u=27947 | TASK [../roles/fluentd : Install fluentd] **************************************
+2020-01-21 03:25:33,045 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:33,089 p=sridhar u=27947 | TASK [../roles/fluentd : Setup fluentd configuration files] ********************
+2020-01-21 03:25:33,768 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:33,808 p=sridhar u=27947 | TASK [../roles/fluentd : Load OpenSSL CA Extended Configuration] ***************
+2020-01-21 03:25:34,289 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:34,342 p=sridhar u=27947 | TASK [../roles/fluentd : Check OpenSSL SANs (SubjectAltName) entry for CA] *****
+2020-01-21 03:25:34,915 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:34,956 p=sridhar u=27947 | TASK [../roles/fluentd : Add OpenSSL SANs (SubjectAltName) entry for CA] *******
+2020-01-21 03:25:35,565 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:35,630 p=sridhar u=27947 | TASK [../roles/fluentd : Determine if firewalld is in use] *********************
+2020-01-21 03:25:35,849 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:35,891 p=sridhar u=27947 | TASK [../roles/fluentd : Determine if firewalld is active] *********************
+2020-01-21 03:25:36,106 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:36,192 p=sridhar u=27947 | TASK [../roles/fluentd : Determine if TCP/42185 is already active] *************
+2020-01-21 03:25:37,021 p=sridhar u=27947 | fatal: [127.0.0.1]: FAILED! => {"censored": "the output has been hidden due to the fact that 'no_log: true' was specified for this result", "changed": true}
+2020-01-21 03:25:37,021 p=sridhar u=27947 | ...ignoring
+2020-01-21 03:25:37,063 p=sridhar u=27947 | TASK [../roles/fluentd : Add firewall rule for TCP/42185 (firewalld)] **********
+2020-01-21 03:25:37,849 p=sridhar u=27947 | changed: [127.0.0.1] => (item=firewall-cmd --zone=public --add-port=42185/tcp --permanent)
+2020-01-21 03:25:39,113 p=sridhar u=27947 | changed: [127.0.0.1] => (item=firewall-cmd --reload)
+2020-01-21 03:25:39,161 p=sridhar u=27947 | TASK [../roles/fluentd : check firewall rules for TCP/42185 (iptables-services)] ***
+2020-01-21 03:25:39,543 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:39,619 p=sridhar u=27947 | TASK [../roles/fluentd : Add firewall rule for TCP/42185 (iptables-services)] ***
+2020-01-21 03:25:39,680 p=sridhar u=27947 | skipping: [127.0.0.1]
+2020-01-21 03:25:39,743 p=sridhar u=27947 | TASK [../roles/fluentd : Restart iptables-services for TCP/42185 (iptables-services)] ***
+2020-01-21 03:25:39,773 p=sridhar u=27947 | skipping: [127.0.0.1]
+2020-01-21 03:25:39,819 p=sridhar u=27947 | TASK [../roles/fluentd : Determine if TCP/9919 is already active] **************
+2020-01-21 03:25:40,611 p=sridhar u=27947 | fatal: [127.0.0.1]: FAILED! => {"censored": "the output has been hidden due to the fact that 'no_log: true' was specified for this result", "changed": true}
+2020-01-21 03:25:40,612 p=sridhar u=27947 | ...ignoring
+2020-01-21 03:25:40,654 p=sridhar u=27947 | TASK [../roles/fluentd : Add firewall rule for TCP/9919 (firewalld)] ***********
+2020-01-21 03:25:41,444 p=sridhar u=27947 | changed: [127.0.0.1] => (item=firewall-cmd --zone=public --add-port=9919/tcp --permanent)
+2020-01-21 03:25:42,554 p=sridhar u=27947 | changed: [127.0.0.1] => (item=firewall-cmd --reload)
+2020-01-21 03:25:42,620 p=sridhar u=27947 | TASK [../roles/fluentd : check firewall rules for TCP/9919 (iptables-services)] ***
+2020-01-21 03:25:43,013 p=sridhar u=27947 | changed: [127.0.0.1]
+2020-01-21 03:25:43,067 p=sridhar u=27947 | TASK [../roles/fluentd : Add firewall rule for TCP/9919 (iptables-services)] ***
+2020-01-21 03:25:43,094 p=sridhar u=27947 | skipping: [127.0.0.1]
+2020-01-21 03:25:43,150 p=sridhar u=27947 | TASK [../roles/fluentd : Restart iptables-services for TCP/9919 (iptables-services)] ***
+2020-01-21 03:25:43,181 p=sridhar u=27947 | skipping: [127.0.0.1]
+2020-01-21 03:25:43,229 p=sridhar u=27947 | TASK [../roles/fluentd : Install fluentd elasticsearch plugin] *****************
+2020-01-21 03:26:00,939 p=sridhar u=27947 | fatal: [127.0.0.1]: FAILED! => {"changed": false, "cmd": "/usr/sbin/td-agent-gem install --version 3.8.0 --no-user-install --no-document fluent-plugin-elasticsearch", "msg": "ERROR:  Error installing fluent-plugin-elasticsearch:\n\tfaraday requires Ruby version >= 2.3.", "rc": 1, "stderr": "ERROR:  Error installing fluent-plugin-elasticsearch:\n\tfaraday requires Ruby version >= 2.3.\n", "stderr_lines": ["ERROR:  Error installing fluent-plugin-elasticsearch:", "\tfaraday requires Ruby version >= 2.3."], "stdout": "Building native extensions.  This could take a while...\nSuccessfully installed msgpack-1.3.1\nSuccessfully installed serverengine-2.2.0\nBuilding native extensions.  This could take a while...\nSuccessfully installed strptime-0.2.3\nSuccessfully installed dig_rb-1.0.1\nSuccessfully installed fluentd-1.8.1\nSuccessfully installed excon-0.71.1\nSuccessfully installed multipart-post-2.1.1\n", "stdout_lines": ["Building native extensions.  This could take a while...", "Successfully installed msgpack-1.3.1", "Successfully installed serverengine-2.2.0", "Building native extensions.  This could take a while...", "Successfully installed strptime-0.2.3", "Successfully installed dig_rb-1.0.1", "Successfully installed fluentd-1.8.1", "Successfully installed excon-0.71.1", "Successfully installed multipart-post-2.1.1"]}
+2020-01-21 03:26:00,940 p=sridhar u=27947 | PLAY RECAP *********************************************************************
+2020-01-21 03:26:00,941 p=sridhar u=27947 | 127.0.0.1                  : ok=16   changed=15   unreachable=0    failed=1    skipped=4    rescued=0    ignored=2   
+2020-01-21 09:44:38,980 p=sridhar u=2038 | PLAY [all] *********************************************************************
+2020-01-21 09:44:39,021 p=sridhar u=2038 | TASK [Gathering Facts] *********************************************************
+2020-01-21 09:44:43,056 p=sridhar u=2038 | ok: [127.0.0.1]
+2020-01-21 09:44:43,110 p=sridhar u=2038 | TASK [../roles/kibana : Copy kibana yum repo file] *****************************
+2020-01-21 09:44:44,736 p=sridhar u=2038 | changed: [127.0.0.1]
+2020-01-21 09:44:44,815 p=sridhar u=2038 | TASK [../roles/kibana : Install kibana rpms] ***********************************
+2020-01-21 09:48:20,590 p=sridhar u=2038 | changed: [127.0.0.1]
+2020-01-21 09:48:20,687 p=sridhar u=2038 | TASK [../roles/kibana : Install local rsyslogd for fluentd] ********************
+2020-01-21 09:48:22,279 p=sridhar u=2038 | ok: [127.0.0.1]
+2020-01-21 09:48:22,340 p=sridhar u=2038 | TASK [../roles/kibana : Setup local rsyslogd for fluentd] **********************
+2020-01-21 09:48:22,444 p=sridhar u=2038 | fatal: [127.0.0.1]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'fluentd_syslog_port' is undefined\n\nThe error appears to be in '/home/sridhar/vil-epc-goa/LMA/roles/kibana/tasks/main.yml': line 20, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Setup local rsyslogd for fluentd\n  ^ here\n"}
+2020-01-21 09:48:22,445 p=sridhar u=2038 | PLAY RECAP *********************************************************************
+2020-01-21 09:48:22,445 p=sridhar u=2038 | 127.0.0.1                  : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-01-21 10:13:07,179 p=sridhar u=3307 | PLAY [all] *********************************************************************
+2020-01-21 10:13:07,209 p=sridhar u=3307 | TASK [Gathering Facts] *********************************************************
+2020-01-21 10:13:10,229 p=sridhar u=3307 | ok: [127.0.0.1]
+2020-01-21 10:13:10,289 p=sridhar u=3307 | TASK [../roles/kibana : Copy kibana yum repo file] *****************************
+2020-01-21 10:13:11,631 p=sridhar u=3307 | ok: [127.0.0.1]
+2020-01-21 10:13:11,683 p=sridhar u=3307 | TASK [../roles/kibana : Install kibana rpms] ***********************************
+2020-01-21 10:13:13,427 p=sridhar u=3307 | ok: [127.0.0.1]
+2020-01-21 10:13:13,468 p=sridhar u=3307 | TASK [../roles/kibana : Install local rsyslogd for fluentd] ********************
+2020-01-21 10:13:14,402 p=sridhar u=3307 | ok: [127.0.0.1]
+2020-01-21 10:13:14,444 p=sridhar u=3307 | TASK [../roles/kibana : Setup local rsyslogd for fluentd] **********************
+2020-01-21 10:13:15,220 p=sridhar u=3307 | changed: [127.0.0.1]
+2020-01-21 10:13:15,281 p=sridhar u=3307 | TASK [../roles/kibana : Copy templated kibana.yml] *****************************
+2020-01-21 10:13:15,412 p=sridhar u=3307 | fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'apache_reverse_proxy' is undefined"}
+2020-01-21 10:13:15,412 p=sridhar u=3307 | ...ignoring
+2020-01-21 10:13:15,474 p=sridhar u=3307 | TASK [../roles/kibana : Populate elasticsearch index with local logs via rsyslog] ***
+2020-01-21 10:13:16,261 p=sridhar u=3307 | changed: [127.0.0.1]
+2020-01-21 10:13:16,397 p=sridhar u=3307 | TASK [../roles/kibana : Check kibana users] ************************************
+2020-01-21 10:13:16,720 p=sridhar u=3307 | ok: [127.0.0.1]
+2020-01-21 10:13:16,761 p=sridhar u=3307 | TASK [../roles/kibana : Create kibana admin user] ******************************
+2020-01-21 10:13:17,094 p=sridhar u=3307 | fatal: [127.0.0.1]: FAILED! => {"changed": false, "cmd": "htpasswd -b -c /etc/htpasswd.users admin admin", "msg": "[Errno 2] No such file or directory", "rc": 2}
+2020-01-21 10:13:17,094 p=sridhar u=3307 | ...ignoring
+2020-01-21 10:13:17,157 p=sridhar u=3307 | TASK [../roles/kibana : Setup kibana service] **********************************
+2020-01-21 10:13:19,252 p=sridhar u=3307 | changed: [127.0.0.1]
+2020-01-21 10:13:19,314 p=sridhar u=3307 | TASK [../roles/kibana : Restart kibana server] *********************************
+2020-01-21 10:13:19,491 p=sridhar u=3307 | fatal: [127.0.0.1]: FAILED! => {"msg": "The conditional check 'apache_reverse_proxy|bool' failed. The error was: error while evaluating conditional (apache_reverse_proxy|bool): 'apache_reverse_proxy' is undefined\n\nThe error appears to be in '/home/sridhar/vil-epc-goa/LMA/roles/kibana/tasks/main.yml': line 58, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Restart kibana server\n  ^ here\n"}
+2020-01-21 10:13:19,495 p=sridhar u=3307 | PLAY RECAP *********************************************************************
+2020-01-21 10:13:19,495 p=sridhar u=3307 | 127.0.0.1                  : ok=10   changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=2   
+2020-01-21 10:15:51,762 p=sridhar u=3800 | PLAY [all] *********************************************************************
+2020-01-21 10:15:51,821 p=sridhar u=3800 | TASK [Gathering Facts] *********************************************************
+2020-01-21 10:15:54,266 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:15:54,352 p=sridhar u=3800 | TASK [../roles/kibana : Copy kibana yum repo file] *****************************
+2020-01-21 10:15:56,360 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:15:56,447 p=sridhar u=3800 | TASK [../roles/kibana : Install kibana rpms] ***********************************
+2020-01-21 10:15:58,773 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:15:58,883 p=sridhar u=3800 | TASK [../roles/kibana : Install local rsyslogd for fluentd] ********************
+2020-01-21 10:16:00,919 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:16:01,023 p=sridhar u=3800 | TASK [../roles/kibana : Setup local rsyslogd for fluentd] **********************
+2020-01-21 10:16:02,066 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:16:02,128 p=sridhar u=3800 | TASK [../roles/kibana : Copy templated kibana.yml] *****************************
+2020-01-21 10:16:02,304 p=sridhar u=3800 | fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'apache_reverse_proxy' is undefined"}
+2020-01-21 10:16:02,304 p=sridhar u=3800 | ...ignoring
+2020-01-21 10:16:02,392 p=sridhar u=3800 | TASK [../roles/kibana : Populate elasticsearch index with local logs via rsyslog] ***
+2020-01-21 10:16:03,409 p=sridhar u=3800 | changed: [127.0.0.1]
+2020-01-21 10:16:03,496 p=sridhar u=3800 | TASK [../roles/kibana : Check kibana users] ************************************
+2020-01-21 10:16:03,864 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:16:03,946 p=sridhar u=3800 | TASK [../roles/kibana : Create kibana admin user] ******************************
+2020-01-21 10:16:04,821 p=sridhar u=3800 | fatal: [127.0.0.1]: FAILED! => {"changed": false, "cmd": "htpasswd -b -c /etc/htpasswd.users admin admin", "msg": "[Errno 2] No such file or directory", "rc": 2}
+2020-01-21 10:16:04,821 p=sridhar u=3800 | ...ignoring
+2020-01-21 10:16:04,939 p=sridhar u=3800 | TASK [../roles/kibana : Setup kibana service] **********************************
+2020-01-21 10:16:07,525 p=sridhar u=3800 | ok: [127.0.0.1]
+2020-01-21 10:16:07,528 p=sridhar u=3800 | PLAY RECAP *********************************************************************
+2020-01-21 10:16:07,529 p=sridhar u=3800 | 127.0.0.1                  : ok=10   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
